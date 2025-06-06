@@ -1,5 +1,11 @@
+const headers = {
+  "x-api-key": "reqres-free-v1"
+};
+fetch('https://reqres.in/api/unknown',{
+  method: "GET",
+    headers: headers
+})
 
-fetch('https://reqres.in/api/unknown')
   .then(response => {
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
