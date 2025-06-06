@@ -2,8 +2,13 @@
         function consumirServicio() {
             const divPadre = document.querySelector('#padre');
             let numUsuario = Math.floor(Math.random() * (11 - 1 + 1)) + 1; // entre 1 y 12 inclusive
-
-            fetch(url + numUsuario)
+const headers = {
+  "x-api-key": "reqres-free-v1"
+};
+            fetch(url + numUsuario,{
+                   method: "GET",
+    headers: headers
+            })
                 .then(res => res.json())
                 .then(data => {
                     const usuario = data.data;
